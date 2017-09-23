@@ -28,7 +28,6 @@
     "sqlite": "^2.8.0"
   },
   "dependencies": {
-    "asmund-utils": "file:../asmund-utils",
     "bluebird": "^3.5.0",
     "has-flag": "^2.0.0",
     "inquirer": "^3.3.0",

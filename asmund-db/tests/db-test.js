@@ -1,6 +1,6 @@
 const test = require('ava')
 const debug = require('debug')('asmund:test')
-const utils = require('asmund-utils')
+const utils = require('../../asmund-utils')
 const Db = require('../')
 const fixtures = require('./fixtures')
 
