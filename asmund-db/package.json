@@ -1,0 +1,37 @@
+{
+  "name": "asmund-db",
+  "version": "1.0.0",
+  "description": "Asmund - Database Module",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint tests/*-test.js",
+    "test": "NODE_ENV=test DEBUG=asmund:* ava tests/*-test.js --verbose",
+    "lint": "eslint lib/*.js",
+    "setup": "DEBUG=asmund:* npm run lint && node setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/glopezep/asmund"
+  },
+  "author": "Guillermo Lopez",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "casual": "^1.5.17",
+    "debug": "^3.0.1",
+    "eslint": "^4.7.2",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "sqlite": "^2.8.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.10.0",
+    "asmund-utils": "file:../asmund-utils"
+  }
+}
