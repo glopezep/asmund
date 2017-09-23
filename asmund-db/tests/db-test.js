@@ -59,3 +59,20 @@ test.serial('db#getUser', async t => {
   await t.throws(db.getUser(), /username is not nullable/)
   await t.throws(db.getUser('foo'), /not found/)
 })
+
+test.serial('db#getUsers', async t => {
+  t.is(typeof db.getUsers, 'function', 'Shuold be a fuction')
+
+  const users = fixtures.getUsers()
+  const saveUsers = []
+
+  users.forEach(user => {
+    saveUsers.push(db.saveUser(user))
+  })
+
+  await Promise.all(saveUsers)
+
+  const result = await db.getUsers()
+
+  t.is(result.length, users.length)
+})

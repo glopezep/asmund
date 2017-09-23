@@ -37,6 +37,14 @@ class Db {
     return Promise.resolve(user).asCallback(callback)
   }
 
+  async getUsers (callback) {
+    const users = await this.models.User.findAll({
+      include: [ { all: true, nested: true } ]
+    }).catch(this.handleFatalError)
+
+    return Promise.resolve(users)
+  }
+
   async setup (callback) {
     await this.sequelize.sync().catch(this.handleFatalError)
     return Promise.resolve('Setup completed').asCallback(callback)
