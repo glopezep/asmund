@@ -35,7 +35,8 @@ module.exports = (options) => {
   }, {
     paranoid: true,
     indexes: [
-      { unique: true, fields: ['email', 'username'] }
+      { unique: true, fields: ['email'] },
+      { unique: true, fields: ['username'] }
     ]
   })
 }
