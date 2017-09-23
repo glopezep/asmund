@@ -1,15 +1,19 @@
 {
   "name": "asmund",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "A simple user manager",
   "main": "index.js",
   "scripts": {
-    "setup-db": "node asmund-db/setup.js"
+    "setup-db": "node node_modules/asmund-db/setup.js"
   },
   "repository": {
     "type": "git",
     "url": "https://www.github.com/asmund"
   },
   "author": "Guillermo Lopez",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "asmund-db": "^1.0.0",
+    "asmund-utils": "^1.0.0"
+  }
 }

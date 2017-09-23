@@ -22,7 +22,7 @@ const options = {
   }
 }
 
-const db = asmund.setupDatabase(options)
+const db = new asmund.Db(options)
 
 db.getUsers().then(users => {
   // do something with users

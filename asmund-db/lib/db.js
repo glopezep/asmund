@@ -1,5 +1,5 @@
 const Promise = require('bluebird')
-const utils = require('../../asmund-utils')
+const utils = require('asmund-utils')
 const setupSequelize = require('./setupSequelize')
 const getModels = require('../models/')
 

@@ -1,5 +1,7 @@
-const Db = require('./asmund-db')
+const Db = require('asmund-db')
+const utils = require('asmund-utils')
 
-exports.setupDatabase = async function setupDatabase(options) {
-  return new Db(options)
+module.exports = {
+  Db
+  utils
 }
