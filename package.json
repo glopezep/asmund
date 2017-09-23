@@ -1,6 +1,6 @@
 {
   "name": "asmund",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple user manager",
   "main": "index.js",
   "scripts": {
