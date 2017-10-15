@@ -44,11 +44,16 @@ db.getUsers((err, users) => {
 
 ### API
 
-#### Saving an user
+#### db#saveUser(user, [callback]): User
+- `user` _(Object)_
+  - `fullname` _(String)_ user fullname.
+  - `email` _(String)_ user email.
+  - `username` _(String)_ user username
+  - `password` _(String)_ user password
 
-```js
-db#saveUser(user: Object, [callback]): Promise<User>
-```
+- `callback`_(Function)_ this argument is optional
+  - `err` _(Object)_ if any
+  - `user` _(Object)_ saved user
 
 ```js
 const user = {
@@ -66,15 +71,52 @@ const created = db.saveUser(user, (err, user) => {
 Or using promise
 
 ```js
-const user = {
-  fullname: 'The administrator',
-  email: 'admin@app.com',
-  username: 'admin',
-  password: 'root'
-}
-
 db.saveUser(user).then(created => {
   // do something with created user 
+}).catch(err => {
+  // do something with err 
+})
+```
+
+#### db#getUser(username, [callback]): User
+- `username` _(String)_ user username
+
+- `callback`_(Function)_ this argument is optional
+  - `err` _(Object)_ if any
+  - `user` _(Object)_ found user
+
+```js
+db.getUser('admin', (err, user) => {
+  // do something with err or user 
+})
+```
+
+Or using promise
+
+```js
+db.getUser('admin').then(user => {
+  // do something with created user 
+}).catch(err => {
+  // do something with err 
+})
+```
+
+#### db#getUsers([callback]): [User]
+- `callback`_(Function)_ this argument is optional
+  - `err` _(Object)_ if any
+  - `users` _(Object)_ user list
+
+```js
+db.getUsers((err, users) => {
+  // do something with err or users 
+})
+```
+
+Or using promise
+
+```js
+db.getUsers().then(users => {
+  // do something with user list
 }).catch(err => {
   // do something with err 
 })
