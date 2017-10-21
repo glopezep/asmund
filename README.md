@@ -29,11 +29,9 @@ db.getUsers().then(users => {
 }).catch(err => {
   // do something with err
 })
-```
 
 Or using callback
 
-```js
 db.getUsers((err, users) => {
   if (err) {
     // do something with err
@@ -44,7 +42,41 @@ db.getUsers((err, users) => {
 
 ### API
 
+#### db#setup([callback]): void
+This method setup the database.
+
+- `callback`_(Function)_ this argument is optional
+  - `err` _(Object)_ if any
+
+```js
+db.setup(err => {
+  if (err) {
+    // do something with err
+  } else {
+    // do something after database setup
+  }
+})
+```
+
+#### db#drop([callback]): void
+This method setup the database.
+
+- `callback`_(Function)_ this argument is optional
+  - `err` _(Object)_ if any
+
+```js
+db.drop(err => {
+  if (err) {
+    // do something with err
+  } else {
+    // do something after database drop
+  }
+})
+```
+
 #### db#saveUser(user, [callback]): User
+This method save an user.
+
 - `user` _(Object)_
   - `fullname` _(String)_ user fullname.
   - `email` _(String)_ user email.
@@ -63,14 +95,12 @@ const user = {
   password: 'root'
 }
 
-const created = db.saveUser(user, (err, user) => {
+db.saveUser(user, (err, created) => {
   // do something with err or user 
 })
-```
 
 Or using promise
 
-```js
 db.saveUser(user).then(created => {
   // do something with created user 
 }).catch(err => {
@@ -79,6 +109,8 @@ db.saveUser(user).then(created => {
 ```
 
 #### db#getUser(username, [callback]): User
+This method find an user by username.
+
 - `username` _(String)_ user username
 
 - `callback`_(Function)_ this argument is optional
@@ -89,11 +121,9 @@ db.saveUser(user).then(created => {
 db.getUser('admin', (err, user) => {
   // do something with err or user 
 })
-```
 
 Or using promise
 
-```js
 db.getUser('admin').then(user => {
   // do something with created user 
 }).catch(err => {
@@ -102,6 +132,8 @@ db.getUser('admin').then(user => {
 ```
 
 #### db#getUsers([callback]): [User]
+This method find all users.
+
 - `callback`_(Function)_ this argument is optional
   - `err` _(Object)_ if any
   - `users` _(Object)_ user list
@@ -110,11 +142,9 @@ db.getUser('admin').then(user => {
 db.getUsers((err, users) => {
   // do something with err or users 
 })
-```
 
 Or using promise
 
-```js
 db.getUsers().then(users => {
   // do something with user list
 }).catch(err => {
