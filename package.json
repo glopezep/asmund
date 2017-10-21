@@ -1,7 +1,7 @@
 {
   "name": "asmund",
-  "version": "1.0.13",
-  "description": "A simple user manager module with utilities included.",
+  "version": "1.0.14",
+  "description": "The best groups and users manager database module for microservices.",
   "main": "index.js",
   "scripts": {
     "setup-db": "node node_modules/asmund-db/setup.js"
@@ -13,11 +13,12 @@
   "author": "Guillermo Lopez",
   "license": "MIT",
   "keywords": [
-    "database",
-    "sequelize",
     "users",
     "groups",
-    "manager"
+    "manager",
+    "database",
+    "module",
+    "microservice"
   ],
   "dependencies": {
     "asmund-db": "^1.0.0",
