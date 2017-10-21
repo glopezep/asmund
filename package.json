@@ -1,6 +1,6 @@
 {
   "name": "asmund",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A simple user manager module with utilities included.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,13 @@
   },
   "author": "Guillermo Lopez",
   "license": "MIT",
+  "keywords": [
+    "database",
+    "sequelize",
+    "users",
+    "groups",
+    "manager"
+  ],
   "dependencies": {
     "asmund-db": "^1.0.0",
     "asmund-utils": "^1.0.0"
