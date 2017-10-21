@@ -82,6 +82,7 @@ This method save an user.
   - `email` _(String)_ user email.
   - `username` _(String)_ user username
   - `password` _(String)_ user password
+  - `groupId` _(String)_ group id
 
 - `callback`_(Function)_ this argument is optional
   - `err` _(Object)_ if any
@@ -151,3 +152,11 @@ db.getUsers().then(users => {
   // do something with err 
 })
 ```
+
+#### db#updateUser(username, data, [callback]): User
+#### db#deleteUser(username, [callback]): User
+#### db#saveGroup(group, [callback]): Group
+#### db#getGroup(id, [callback]): Group
+#### db#getGroups([callback]): [Group]
+#### db#updateGroup(id, data, [callback]): Group
+#### db#deleteGroup(id, [callback]): Group
