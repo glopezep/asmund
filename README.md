@@ -1,5 +1,5 @@
 # asmund
-Asmund is an simple user manager.
+The best groups and users manager database module for microservices
 
 ## Usage
 
