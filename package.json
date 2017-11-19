@@ -1,6 +1,6 @@
 {
   "name": "asmund",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "The best groups and users manager database module for microservices.",
   "main": "index.js",
   "scripts": {
