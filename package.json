@@ -21,7 +21,7 @@
     "microservice"
   ],
   "dependencies": {
-    "asmund-db": "^1.0.0",
-    "asmund-utils": "^1.0.0"
+    "asmund-db": "^1.1.0",
+    "asmund-utils": "^1.1.0"
   }
 }
