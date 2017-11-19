@@ -154,7 +154,58 @@ db.getUsers().then(users => {
 ```
 
 #### db#updateUser(username, data, [callback]): User
+This method update an user
+
+- `username` _(String)_
+- `data` _(Object)_
+  - `fullname` _(String)_
+  - `email` _(String)_
+  - `username` _(String)_
+  - `password` _(String)_
+- `callback`_(Function)_ this argument is optional
+  - `err` _(Object)_ if any
+  - `user` _(Object)_ user created
+
+```js
+const data = {
+  username: 'my_new_username',
+}
+
+db.updateUser('guillermo', data, (err, user) => {
+  // do something with err or updated user
+})
+
+Or using promise
+
+db.updateUser('guillermo', data).then(user => {
+  // do something with user
+}).catch(err => {
+  // do something with error
+})
+```
+
 #### db#deleteUser(username, [callback]): User
+This method delete an user
+
+- `username` _(String)_
+- `callback` _(Function)_
+  - `err` _(Object)_
+  - `user` _(Object)_
+
+```js
+db.deleteUser('guillermo', (err, user) => {
+  // do something with err or updated user
+})
+
+Or using promise
+
+db.deleteUser('guillermo').then(user => {
+  // do something with user
+}).catch(err => {
+  // do something with error
+})
+```
+
 #### db#saveGroup(group, [callback]): Group
 #### db#getGroup(id, [callback]): Group
 #### db#getGroups([callback]): [Group]

@@ -1,15 +1,14 @@
-const setupUserModel = require('./user')
-const setupGroupModel = require('./group')
+const sequelizeImport = require('sequelize-import')
 
-module.exports = function getModels (options) {
-  const User = setupUserModel(options)
-  const Group = setupGroupModel(options)
-
-  User.belongsTo(Group)
-  Group.hasMany(User)
-
-  return {
-    User,
-    Group
+module.exports = function getModels (sequelize) {
+  const options = {
+    exclude: ['index.js']
   }
+
+  const models = sequelizeImport(__dirname, sequelize, options)
+
+  models.User.belongsTo(models.Group)
+  models.Group.hasMany(models.User)
+
+  return models
 }

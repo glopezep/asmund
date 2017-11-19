@@ -1,10 +1,10 @@
 {
   "name": "asmund-utils",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Asmund - Utilities Module",
   "main": "index.js",
   "scripts": {
-    "test": "ava tests/*-test.js --verbose"
+    "test": "NODE_ENV=test ava tests/*-test.js --verbose"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "asmund-db",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Asmund - Database Module",
   "main": "index.js",
   "scripts": {
@@ -34,6 +34,7 @@
     "inquirer": "^3.3.0",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.10.0"
+    "sequelize": "^4.10.0",
+    "sequelize-import": "^1.2.1"
   }
 }

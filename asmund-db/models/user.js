@@ -1,42 +1,35 @@
-const Sequelize = require('sequelize')
-const setupSequelize = require('../lib/setupSequelize')
-
-module.exports = (options) => {
-  const sequelize = setupSequelize(options)
-
+module.exports = (sequelize, DataTypes) => {
   return sequelize.define('user', {
     id: {
-      type: Sequelize.CHAR(36),
-      defaultValue: Sequelize.UUIDV4,
+      type: DataTypes.CHAR(36),
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
       primaryKey: true
     },
     fullname: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     email: {
-      type: Sequelize.STRING,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
     },
     username: {
-      type: Sequelize.STRING,
-      allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
     },
     password: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     isActive: {
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false
     }
   }, {
-    paranoid: true,
-    indexes: [
-      { unique: true, fields: ['email'] },
-      { unique: true, fields: ['username'] }
-    ]
+    paranoid: true
   })
 }

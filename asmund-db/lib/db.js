@@ -17,8 +17,8 @@ class Db {
         idle: 10000
       }
     }
-    this.models = getModels(this.options)
     this.sequelize = setupSequelize(this.options)
+    this.models = getModels(this.sequelize)
   }
 
   async saveGroup (group, callback) {
